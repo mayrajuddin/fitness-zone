@@ -1,7 +1,8 @@
 import React from 'react';
 import './Layout.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import Workouts from '../workout/Workouts';
 
 const Layout = () => {
     return (
@@ -11,14 +12,16 @@ const Layout = () => {
                     <h1> UtRA-Active-club</h1>
                 </div>
                 <h3>Select today's exercise</h3>
+                <div>
+                    <Workouts></Workouts>
+                </div>
             </div>
             <div className='details'>
-                <div className='px-3'>
-                    <div className='py-3'>
-                        <div className='d-flex align-items-center'>
-                            <h5>Zahid Hossain</h5>
-                        </div>
-                        <div className='fs-6'>
+                <div className='px-3 details-child'>
+                    <div className='py-3 d-flex align-items-center'>
+                        <span className='me-3 fs-1'><FontAwesomeIcon icon={faUserTie}></FontAwesomeIcon></span>
+                        <div className=''>
+                            <h5>Mayraj Uddin</h5>
                             <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>
                             <span className='ms-1'> Mirsarai, Bangladesh</span>
                         </div>

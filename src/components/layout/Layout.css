@@ -4,7 +4,7 @@
 }
 
 .top-header {
-    margin-top: 90px;
+    margin-top: 60px;
 }
 
 .activity {
@@ -18,6 +18,15 @@
 
 .pd {
     padding: 20px;
+}
+
+.details {
+    position: relative;
+}
+
+.details-child {
+    position: sticky;
+    top: 0;
 }
 
 .parson-detail span {
