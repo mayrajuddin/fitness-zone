@@ -4,7 +4,7 @@ import './Cart.css'
 const Cart = ({ exercise }) => {
     const { duration, img, name, age, details } = exercise
     return (
-        <div>
+        <div className='col-12 gy-2 col-md-4 g-md-4' >
             <div className='card'>
                 <img src={img} alt="" className='card-img-top' />
                 <div className='card-body'>

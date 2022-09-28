@@ -1,8 +1,3 @@
-.activity-container {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-
 .top-header {
     margin-top: 60px;
 }
@@ -40,4 +35,14 @@
     font-size: 17px;
     background-color: #fff;
     border-radius: 6px;
+}
+
+@media (max-width: 767px) {
+    .activity {
+        padding: 0 20px;
+    }
+
+    .pd {
+        padding: 10px;
+    }
 }

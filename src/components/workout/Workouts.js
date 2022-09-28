@@ -11,7 +11,7 @@ const Workouts = () => {
     }, [])
     // console.log(exercises);
     return (
-        <div className='workouts'>
+        <div className='row'>
             {
                 exercises.map(exercise => <Cart exercise={exercise} key={exercise.id}></Cart>)
             }
