@@ -2,6 +2,10 @@
     padding-top: 60px;
 }
 
+.top-header img {
+    width: 120px;
+}
+
 .activity {
     padding: 0 120px;
     background-color: #F2F4FA;

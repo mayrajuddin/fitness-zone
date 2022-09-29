@@ -11,9 +11,9 @@ const Cart = (props) => {
                 <img src={img} alt="" className='card-img-top' />
                 <div className='card-body'>
                     <h5 className='card-title'>{name}</h5>
-                    <p className='card-text'>{details}</p>
-                    <h6>for age : {age}</h6>
-                    <h6>duration : {duration}</h6>
+                    <p className='card-text'>{details ? details.slice(0, 60) + (' ...') : 'details not found'}</p>
+                    <h6 className='text-capitalize'>for age : {age}</h6>
+                    <h6 className='text-capitalize'>duration : {duration}</h6>
                     <button className='btn btn-primary text-capitalize w-100 mt-2' onClick={() => addTime(props.exercise)}>add to list </button>
                 </div>
             </div>

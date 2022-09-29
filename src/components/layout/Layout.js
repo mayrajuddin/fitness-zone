@@ -22,7 +22,7 @@ const Layout = () => {
             <div className='col-9'>
                 <div className="activity">
                     <div className='top-header'>
-                        <h1> UtRA-Active-club</h1>
+                        <h1> Fitness Zone</h1>
                     </div>
                     <h3>Select today's exercise</h3>
                     <Workouts addTime={addTime}></Workouts>
@@ -53,11 +53,11 @@ const Layout = () => {
                     <h5 className='fs-t text-center'>Exercise Details</h5>
                     <div className='mb-4 cc rounded pd text-center d-md-flex justify-content-between'>
                         <span className='d-block d-md-inline fs fs-md-5'>Exercise time</span>
-                        <span className='px-4'> {totalTime}s</span>
+                        <span className='px-4'> {totalTime} s</span>
                     </div>
                     <div className='mb-4 cc rounded pd text-center d-md-flex justify-content-between'>
                         <span className='d-block d-md-inline fs'>Break time</span>
-                        <span className='px-4'><Utilities time={3}></Utilities></span>
+                        <span className='px-4'><Utilities time={3}></Utilities> min</span>
                     </div>
                     <button className='w-100 py-3 btn  btn-primary rounded fs-t'>Activity Completed</button>
                 </div>
