@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 const Layout = () => {
     const [times, setTime] = useState([])
     const [breakTime, setBreakTime] = useState(0)
+
     const addTime = (value) => {
         const newtime = [...times, value]
         setTime(newtime)
@@ -20,12 +21,10 @@ const Layout = () => {
     }
     const addToBreak = (value) => {
         setBreakTime(value)
-        localStorage.setItem('breakTime', JSON.stringify(value))
-        console.log(typeof value);
-
+        localStorage.setItem('breakTime', value)
     }
     useEffect(() => {
-        const getStoredTime = localStorage.getItem('breakTime', breakTime)
+        const getStoredTime = localStorage.getItem('breakTime', breakTime) ? localStorage.getItem('breakTime', breakTime) : 0;
         setBreakTime(getStoredTime)
     }, [breakTime])
     return (
