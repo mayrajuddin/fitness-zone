@@ -8,7 +8,7 @@ function App() {
     <div className=''>
       <div>
         <Toaster position="top-center"
-          reverseOrder={false}> </Toaster>
+          reverseOrder={false}></Toaster>
       </div>
       <Layout></Layout>
     </div>

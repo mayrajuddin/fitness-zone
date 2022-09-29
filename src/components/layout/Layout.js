@@ -3,16 +3,15 @@ import './Layout.css';
 import Workouts from '../workout/Workouts';
 import Answer from '../answer/Answer';
 import { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import toast from 'react-hot-toast';
 
 const Layout = () => {
     const [times, setTime] = useState([])
     const [breakTime, setBreakTime] = useState(0)
     const addTime = (value) => {
         const newtime = [...times, value]
-        // console.log(newtime);
         setTime(newtime)
     }
     let totalTime = 0;
@@ -71,9 +70,9 @@ const Layout = () => {
                     </div>
                     <div className='mb-4 cc rounded pd text-center d-md-flex justify-content-between'>
                         <span className='d-block d-md-inline fs'>Break time</span>
-                        <span className='px-4'>{breakTime} min</span>
+                        <span className='px-md-4 text-center'>{breakTime}  minutes</span>
                     </div>
-                    <button className='w-100 py-3 btn  btn-primary rounded fs-t' onClick={() => toast('Today Exercise Complete')}>Activity Completed</button>
+                    <button className='w-100 py-3 btn  btn-primary rounded fs-t' onClick={() => toast.success("Today Exercise Complete")}>Activity Completed</button>
                 </div>
             </div>
         </div>
