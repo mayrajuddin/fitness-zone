@@ -1,8 +1,10 @@
-import React from 'react';
+
 import './Cart.css'
 
-const Cart = ({ exercise }) => {
-    const { duration, img, name, age, details } = exercise
+const Cart = (props) => {
+    const { duration, img, name, age, details } = props.exercise;
+    const { addTime } = props
+    // console.log(addTime);
     return (
         <div className='col-12 gy-2 col-md-4 g-md-4' >
             <div className='card'>
@@ -12,7 +14,7 @@ const Cart = ({ exercise }) => {
                     <p className='card-text'>{details}</p>
                     <h6>for age : {age}</h6>
                     <h6>duration : {duration}</h6>
-                    <button className='btn btn-primary text-capitalize w-100 mt-2'>add to list </button>
+                    <button className='btn btn-primary text-capitalize w-100 mt-2' onClick={() => addTime(props.exercise)}>add to list </button>
                 </div>
             </div>
         </div>

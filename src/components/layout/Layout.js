@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Layout.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import Workouts from '../workout/Workouts';
+import Utilities from '../utilities/Utilities';
 
 const Layout = () => {
+    const [times, setTime] = useState([])
+    const addTime = (value) => {
+        const newtime = [...times, value]
+        // console.log(newtime);
+        setTime(newtime)
+    }
+    let totalTime = 0;
+    for (const time of times) {
+        totalTime = totalTime + time.duration;
+
+    }
     return (
         <div className='row'>
             <div className='activity col-9 '>
@@ -12,11 +24,11 @@ const Layout = () => {
                     <h1> UtRA-Active-club</h1>
                 </div>
                 <h3>Select today's exercise</h3>
-                <Workouts></Workouts>
+                <Workouts addTime={addTime}></Workouts>
             </div>
             <div className='details col-3 '>
-                <div className='px-3 details-child'>
-                    <div className='py-3 d-flex align-items-center'>
+                <div className='px-2 px-md-3 details-child'>
+                    <div className='py-3 d-md-flex align-items-center'>
                         <span className='me-3 fs-1'><FontAwesomeIcon icon={faUserTie}></FontAwesomeIcon></span>
                         <div className=''>
                             <h5>Mayraj Uddin</h5>
@@ -39,11 +51,11 @@ const Layout = () => {
                     <h5>Exercise Details</h5>
                     <div className='mb-4 cc rounded pd d-md-flex justify-content-between'>
                         <span>Exercise time</span>
-                        <span className='px-4'>30min</span>
+                        <span className='px-4'> {totalTime}s</span>
                     </div>
                     <div className='mb-4 cc rounded pd d-md-flex justify-content-between'>
                         <span>Break time</span>
-                        <span className='px-4'>30min</span>
+                        <span className='px-4'><Utilities time={3}></Utilities></span>
                     </div>
                     <button className='w-100 py-3 btn  btn-primary rounded'>Activity Completed</button>
                 </div>
