@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import Workouts from '../workout/Workouts';
 import Utilities from '../utilities/Utilities';
+import Answer from '../answer/Answer';
 
 const Layout = () => {
     const [times, setTime] = useState([])
@@ -26,6 +27,7 @@ const Layout = () => {
                     </div>
                     <h3>Select today's exercise</h3>
                     <Workouts addTime={addTime}></Workouts>
+                    <Answer></Answer>
                 </div>
             </div>
             <div className='details col-3 '>
