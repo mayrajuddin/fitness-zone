@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+
 import './Layout.css';
+import Workouts from '../workout/Workouts';
+import Answer from '../answer/Answer';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faUserTie } from '@fortawesome/free-solid-svg-icons';
-import Workouts from '../workout/Workouts';
-import Utilities from '../utilities/Utilities';
-import Answer from '../answer/Answer';
-import toast from 'react-hot-toast';
 
 const Layout = () => {
     const [times, setTime] = useState([])
+    const [breakTime, setBreakTime] = useState(0)
     const addTime = (value) => {
         const newtime = [...times, value]
         // console.log(newtime);
@@ -18,6 +19,9 @@ const Layout = () => {
     for (const time of times) {
         totalTime = totalTime + time.duration;
 
+    }
+    const addToBreak = (value) => {
+        setBreakTime(value)
     }
     return (
         <div className='d-flex'>
@@ -48,10 +52,10 @@ const Layout = () => {
                     </div>
                     <p className=' fs-md-5 text-capitalize fw-bold fs-t'> Add a break</p>
                     <div className='mb-4 cc rounded break pd text-center d-md-flex justify-content-between'>
-                        <button className='mb-2 px-3 px-md-2'>5<small>min</small></button>
-                        <button className='mb-2 px-3 px-md-2'>10<small>min</small></button>
-                        <button className='mb-2 px-3 px-md-2'>15<small>min</small></button>
-                        <button className='mb-2 px-3 px-md-2'>30<small>min</small></button>
+                        <button className='mb-2 px-3 px-md-2' onClick={() => addToBreak(5)}>5<small>min</small></button>
+                        <button className='mb-2 px-3 px-md-2' onClick={() => addToBreak(10)}>10<small>min</small></button>
+                        <button className='mb-2 px-3 px-md-2' onClick={() => addToBreak(15)}>15<small>min</small></button>
+                        <button className='mb-2 px-3 px-md-2' onClick={() => addToBreak(30)}>30<small>min</small></button>
                     </div>
                     <h5 className='fs-t text-center'>Exercise Details</h5>
                     <div className='mb-4 cc rounded pd text-center d-md-flex justify-content-between'>
@@ -60,7 +64,7 @@ const Layout = () => {
                     </div>
                     <div className='mb-4 cc rounded pd text-center d-md-flex justify-content-between'>
                         <span className='d-block d-md-inline fs'>Break time</span>
-                        <span className='px-4'><Utilities time={3}></Utilities> min</span>
+                        <span className='px-4'>{breakTime} min</span>
                     </div>
                     <button className='w-100 py-3 btn  btn-primary rounded fs-t' onClick={() => toast('Today Exercise Complete')}>Activity Completed</button>
                 </div>

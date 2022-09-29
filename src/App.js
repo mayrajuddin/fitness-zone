@@ -6,8 +6,10 @@ import Layout from './components/layout/Layout';
 function App() {
   return (
     <div className=''>
-      <div><Toaster position="top-center"
-        reverseOrder={false}></Toaster></div>
+      <div>
+        <Toaster position="top-center"
+          reverseOrder={false}> </Toaster>
+      </div>
       <Layout></Layout>
     </div>
   );
