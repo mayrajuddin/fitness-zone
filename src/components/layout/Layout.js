@@ -1,10 +1,9 @@
-
 import './Layout.css';
 import Workouts from '../workout/Workouts';
 import Answer from '../answer/Answer';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { faDumbbell, faLocationDot, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import toast from 'react-hot-toast';
 
 const Layout = () => {
@@ -33,7 +32,8 @@ const Layout = () => {
         <div className='d-flex'>
             <div className='col-9'>
                 <div className="activity">
-                    <div className='top-header'>
+                    <div className='top-header d-flex align-items-center'>
+                        <span className='fs-3 me-2 text-primary '><FontAwesomeIcon icon={faDumbbell}></FontAwesomeIcon></span>
                         <h1> Fitness Zone</h1>
                     </div>
                     <h3>Select today's exercise</h3>
