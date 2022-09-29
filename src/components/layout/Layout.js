@@ -5,6 +5,7 @@ import { faLocationDot, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import Workouts from '../workout/Workouts';
 import Utilities from '../utilities/Utilities';
 import Answer from '../answer/Answer';
+import toast from 'react-hot-toast';
 
 const Layout = () => {
     const [times, setTime] = useState([])
@@ -61,7 +62,7 @@ const Layout = () => {
                         <span className='d-block d-md-inline fs'>Break time</span>
                         <span className='px-4'><Utilities time={3}></Utilities> min</span>
                     </div>
-                    <button className='w-100 py-3 btn  btn-primary rounded fs-t'>Activity Completed</button>
+                    <button className='w-100 py-3 btn  btn-primary rounded fs-t' onClick={() => toast('Today Exercise Complete')}>Activity Completed</button>
                 </div>
             </div>
         </div>
