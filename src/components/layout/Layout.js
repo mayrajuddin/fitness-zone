@@ -2,7 +2,7 @@
 import './Layout.css';
 import Workouts from '../workout/Workouts';
 import Answer from '../answer/Answer';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faUserTie } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +22,14 @@ const Layout = () => {
     }
     const addToBreak = (value) => {
         setBreakTime(value)
+        localStorage.setItem('breakTime', JSON.stringify(value))
+        console.log(typeof value);
+
     }
+    useEffect(() => {
+        const getStoredTime = localStorage.getItem('breakTime', breakTime)
+        setBreakTime(getStoredTime)
+    }, [breakTime])
     return (
         <div className='d-flex'>
             <div className='col-9'>
